@@ -7,3 +7,5 @@ dev/.data/
 *.log
 .DS_Store
 Thumbs.db
+dev/shots/
+dist/
