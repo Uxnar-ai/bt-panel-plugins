@@ -1,0 +1,15 @@
+{
+    "title": "SSH登录审计",
+    "name": "ssh_login_log",
+    "ps": "按 IP、时间、端口、状态、用户查看 SSH 登录记录，含失败爆破统计、在线会话、一键封禁 IP/网段与白名单",
+    "versions": "2.5",
+    "checks": "/www/server/panel/plugin/ssh_login_log",
+    "author": "Uxnar",
+    "home": "https://www.bt.cn/bbs",
+    "date": "2026-11-16",
+    "display": 1,
+    "sort": 100,
+    "beta": false,
+    "type": 0,
+    "id": 0
+}
