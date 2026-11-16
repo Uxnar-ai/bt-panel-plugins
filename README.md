@@ -2,6 +2,8 @@
 
 自用的宝塔面板（BT-Panel）插件收纳库。一个目录一个插件，源码和打包成品放在一起，可直接导入面板使用。
 
+> 插件开发规范、接口约定、踩坑记录见 **[DEVELOPMENT.md](DEVELOPMENT.md)**。
+
 ## 插件列表
 
 | 插件 | 说明 | 版本 |
@@ -32,7 +34,10 @@
 
 ## 开发约定
 
+完整的开发规则见 [DEVELOPMENT.md](DEVELOPMENT.md)，要点：
+
 - Python 3，只用标准库；面板自带 `pyenv` 解释器
 - 后端方法名即接口名，前端通过 `/plugin?action=a&name=<plugin>&s=<method>` 调用
-- 面板 13.x 对 `/plugin` 强制校验 `x-http-token` 请求头，缺失会返回 `INIT_CSRF_ERR`（界面显示「权限认证失败」）。前端需从父窗口 `window.vite_public_request_token` 或 cookie 取值并带上
-- 页面自适应面板弹窗宽度，窄容器下按列优先级折叠次要列
+- 面板 13.x 对 `/plugin` 强制校验 `x-http-token`，缺失返回 `INIT_CSRF_ERR`（界面显示「权限认证失败」）
+- 插件页在窄弹窗 iframe 内（实测 570×450），排版按真实可见宽度降级
+- 改前端后必须 `Ctrl + F5`，面板有 24 小时静态缓存
